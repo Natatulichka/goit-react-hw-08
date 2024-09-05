@@ -7,7 +7,7 @@
   border-radius: 8px;
   margin-bottom: 8px;
   font-family: "Roboto", sans-serif;
-  background-color: #f9f9f9;
+  background-color: #cbfade;
 }
 
 .contactDetails {
@@ -18,10 +18,12 @@
 .contactName {
   font-weight: bold;
   margin-bottom: 8px;
+  margin-left: 8px;
 }
 
 .contactNumber {
   color: #555;
+  margin-left: 8px;
 }
 
 .deleteButton {

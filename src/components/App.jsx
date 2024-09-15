@@ -11,13 +11,13 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import Loader from "./Loader/Loader";
+import { Layout } from "./Layout";
 
 const HomePage = lazy(() => import("../pages/HomePage"));
 const RegistrationPage = lazy(() => import("../pages/RegistrationPage"));
 const LoginPage = lazy(() => import("../pages/LoginPage"));
 const ContactsPage = lazy(() => import("../pages/ContactsPage"));
 const NotFoundPage = lazy(() => import("../pages/NotFoundPage"));
-const Navigation = lazy(() => import("./Navigation/Navigation"));
 
 function App() {
   // const loading = useSelector(selectLoading);
@@ -28,21 +28,15 @@ function App() {
   //   dispatch(fetchContacts());
   // }, [dispatch]);
   return (
-    <div>
-      <Navigation />
-      <main>
-        <Suspense fallback={<Loader />}>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/register" element={<RegistrationPage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/contacts" element={<ContactsPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </Suspense>
-      </main>
-      <footer></footer>
-    </div>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/register" element={<RegistrationPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/contacts" element={<ContactsPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </Layout>
   );
 }
 // <div>

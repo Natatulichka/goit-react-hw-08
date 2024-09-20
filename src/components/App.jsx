@@ -13,20 +13,14 @@ import { Route, Routes } from "react-router-dom";
 import Loader from "./Loader/Loader";
 import { Layout } from "./Layout";
 
-const HomePage = lazy(() => import("../pages/HomePage"));
-const RegistrationPage = lazy(() => import("../pages/RegistrationPage"));
-const LoginPage = lazy(() => import("../pages/LoginPage"));
-const ContactsPage = lazy(() => import("../pages/ContactsPage"));
-const NotFoundPage = lazy(() => import("../pages/NotFoundPage"));
+const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
+const RegistrationPage = lazy(() =>
+  import("../pages/RegistrationPage/RegistrationPage")
+);
+const LoginPage = lazy(() => import("../pages/LoginPage/LoginPage"));
+const ContactsPage = lazy(() => import("../pages/ContactsPage/ContactsPage"));
 
 function App() {
-  // const loading = useSelector(selectLoading);
-  // const error = useSelector(selectError);
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
   return (
     <Layout>
       <Routes>
@@ -34,23 +28,9 @@ function App() {
         <Route path="/register" element={<RegistrationPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/contacts" element={<ContactsPage />} />
-        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Layout>
   );
 }
-// <div>
-//   <h1>Phonebook</h1>
-//   <ContactForm />
-
-//   <SearchBox />
-//   <div>
-//     {loading && !error && <Loader />}
-//     {error !== null && (
-//       <p style={{ color: "red", textAlign: "center" }}>{error}</p>
-//     )}
-//   </div>
-//   <ContactList />
-// </div>
 
 export default App;

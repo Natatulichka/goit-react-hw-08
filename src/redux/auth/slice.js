@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { register, logIn, logOut, refreshUser } from "./operations";
+import { register, refreshUser, login, logout } from "./operations";
 
 const INIT_STATE = {
   user: {
@@ -15,35 +15,52 @@ const authSlice = createSlice({
   name: "auth",
   initialState: INIT_STATE,
   reducers: {},
-  extraReducers: (builder) => {
+  extraReducers: (builder) =>
     builder
+      .addCase(register.pending, (state) => {
+        state.error = null;
+      })
       .addCase(register.fulfilled, (state, action) => {
-        state.user = action.payload.user;
-        state.token = action.payload.token;
         state.isLoggedIn = true;
-      })
-      .addCase(logIn.fulfilled, (state, action) => {
-        state.user = action.payload.user;
         state.token = action.payload.token;
-        state.isLoggedIn = true;
+        state.user = action.payload.user;
       })
-      .addCase(logOut.fulfilled, (state) => {
-        state.user = { name: null, email: null };
-        state.token = null;
-        state.isLoggedIn = false;
+      .addCase(register.rejected, (state, action) => {
+        state.error = action.payload;
+      })
+      .addCase(login.pending, (state) => {
+        state.error = null;
+      })
+      .addCase(login.fulfilled, (state, action) => {
+        state.isLoggedIn = true;
+        state.token = action.payload.token;
+        state.user = action.payload.user;
+      })
+      .addCase(login.rejected, (state, action) => {
+        state.error = action.payload;
       })
       .addCase(refreshUser.pending, (state) => {
+        state.error = null;
         state.isRefreshing = true;
       })
       .addCase(refreshUser.fulfilled, (state, action) => {
-        state.user = action.payload;
         state.isLoggedIn = true;
+        state.user = action.payload;
         state.isRefreshing = false;
       })
-      .addCase(refreshUser.rejected, (state) => {
+      .addCase(refreshUser.rejected, (state, action) => {
+        state.error = action.payload;
         state.isRefreshing = false;
-      });
-  },
+      })
+      .addCase(logout.pending, (state) => {
+        state.error = null;
+      })
+      .addCase(logout.fulfilled, () => {
+        return INIT_STATE;
+      })
+      .addCase(logout.rejected, (state, action) => {
+        state.error = action.payload;
+      }),
 });
 
 export const authReducer = authSlice.reducer;

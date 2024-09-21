@@ -28,7 +28,7 @@ function HomePage() {
       <div className={css.features}>
         <h2>Features</h2>
         <ul>
-          <li>Add, edit, and delete contacts.</li>
+          <li>Add and delete contacts.</li>
           <li>Secure and fast storage.</li>
           <li>Accessible from anywhere.</li>
         </ul>

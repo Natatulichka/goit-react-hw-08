@@ -11,21 +11,13 @@
   background-color: #cbfade;
 }
 
-.group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
 .label {
   font-weight: bold;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
-.input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
 .error {
   color: red;
   margin-top: 5px;

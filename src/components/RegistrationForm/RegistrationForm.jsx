@@ -3,8 +3,7 @@ import * as Yup from "yup";
 import { selectAuthError } from "../../redux/auth/selectors";
 import { register } from "../../redux/auth/operations";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-
-import css from "../LoginForm/LoginForm.module.css";
+import css from "../ContactForm/ContactForm.module.css";
 
 const RegisterValidationSchema = Yup.object().shape({
   name: Yup.string()
@@ -39,27 +38,19 @@ function RegistrationForm() {
       validationSchema={RegisterValidationSchema}
     >
       {({ errors }) => (
-        <Form className={css.wrapper}>
-          <label>
+        <Form className={css.form}>
+          <label className={css.label}>
             <span>Username:</span>
             <Field type="text" name="name" placeholder="Enter username" />
-            <ErrorMessage
-              className={css.errorText}
-              name="name"
-              component="span"
-            />
+            <ErrorMessage className={css.error} name="name" component="span" />
           </label>
-          <label>
+          <label className={css.label}>
             <span>Email:</span>
             <Field type="text" name="email" placeholder="example@gmail.com" />
-            <ErrorMessage
-              className={css.errorText}
-              name="email"
-              component="span"
-            />
+            <ErrorMessage className={css.error} name="email" component="span" />
           </label>
 
-          <label>
+          <label className={css.label}>
             <span>Password:</span>
             <Field
               type="password"
@@ -67,7 +58,7 @@ function RegistrationForm() {
               placeholder="Enter your password"
             />
             <ErrorMessage
-              className={css.errorText}
+              className={css.error}
               name="password"
               component="span"
             />
@@ -78,7 +69,7 @@ function RegistrationForm() {
           </button>
           <a href="/login">Already have an account? Login</a>
           {error && (
-            <p className={css.errorText}>Oops, some error occured... {error}</p>
+            <p className={css.error}>Oops, some error occured... {error}</p>
           )}
         </Form>
       )}

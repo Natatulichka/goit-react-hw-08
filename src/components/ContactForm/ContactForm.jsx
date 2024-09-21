@@ -51,16 +51,17 @@ function ContactForm() {
     >
       {({ isSubmitting }) => (
         <Form className={css.form}>
-          <div className={css.group}>
-            <label className={css.label}>Name</label>
-            <Field type="text" name="name" className={css.input} />
+          <label className={css.label}>
+            <span>Name:</span>
+            <Field type="text" name="name" />
             <ErrorMessage name="name" component="div" className={css.error} />
-          </div>
-          <div className={css.group}>
-            <label className={css.label}>Number</label>
-            <Field type="text" name="number" className={css.input} />
+          </label>
+
+          <label className={css.label}>
+            <span>Number:</span>
+            <Field type="text" name="number" />
             <ErrorMessage name="number" component="div" className={css.error} />
-          </div>
+          </label>
           <button type="submit" disabled={isSubmitting}>
             Add Contact <FaUserPlus />
           </button>

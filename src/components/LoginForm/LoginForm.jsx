@@ -1,7 +1,7 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import * as Yup from "yup";
-import css from "./LoginForm.module.css";
+import css from "../ContactForm/ContactForm.module.css";
 import { selectAuthError } from "../../redux/auth/selectors";
 import { login } from "../../redux/auth/operations";
 
@@ -35,15 +35,11 @@ function LoginForm() {
       validationSchema={loginValidationSchema}
     >
       {({ errors }) => (
-        <Form className={css.wrapper}>
+        <Form className={css.form}>
           <label className={css.label}>
             <span>Email:</span>
             <Field type="text" name="email" placeholder="example@gmail.com" />
-            <ErrorMessage
-              className={css.errorText}
-              name="email"
-              component="span"
-            />
+            <ErrorMessage className={css.error} name="email" component="span" />
           </label>
 
           <label className={css.label}>
@@ -54,7 +50,7 @@ function LoginForm() {
               placeholder="Enter your password"
             />
             <ErrorMessage
-              className={css.errorText}
+              className={css.error}
               name="password"
               component="span"
             />
@@ -65,7 +61,7 @@ function LoginForm() {
           </button>
           <a href="/register">Don&apos;t have an account? Register</a>
           {error && (
-            <p className={css.errorText}>Oops, some error occured... {error}</p>
+            <p className={css.error}>Oops, some error occured... {error}</p>
           )}
         </Form>
       )}

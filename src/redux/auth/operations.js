@@ -19,6 +19,7 @@ export const register = createAsyncThunk(
     try {
       const { data } = await instance.post("users/signup", formData);
       setAuthHeader(data.token);
+      console.log("data:", data);
 
       return data;
     } catch (error) {
@@ -79,3 +80,4 @@ export const refreshUser = createAsyncThunk(
     },
   }
 );
+console.log(setAuthHeader());

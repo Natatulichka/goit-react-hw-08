@@ -5,7 +5,8 @@ import * as Yup from "yup";
 import css from "./ContactForm.module.css";
 import { FaUserPlus } from "react-icons/fa";
 
-import { addContact } from "../../redux/contactsOps";
+import { addContact } from "../../redux/contacts/operations";
+import toast from "react-hot-toast";
 
 const phoneRegExp = /^[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}$/;
 const validationSchema = Yup.object().shape({
@@ -34,7 +35,11 @@ function ContactForm() {
       name: values.name,
       number: values.number,
     };
-    dispatch(addContact(newContact));
+    dispatch(addContact(newContact))
+      .unwrap()
+      .then(() => {
+        toast.success("Contact added successfully🎉");
+      });
     actions.resetForm();
   };
 

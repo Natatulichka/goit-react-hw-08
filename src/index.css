@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -11,6 +11,19 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+} */
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: sans-serif;
+  line-height: 1.5;
+  background-color: #cbfade;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
 a {
@@ -30,11 +43,6 @@ input {
   outline: none;
   transition: border-color 0.3s;
 }
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-}
 
 h1 {
   list-style: none;
@@ -44,6 +52,12 @@ h1 {
   text-align: center;
   font-size: 3.2em;
   line-height: 1.1;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 button {
@@ -77,7 +91,8 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #d8e6f0;
+    text-decoration: underline;
   }
   button {
     background-color: #2a99f3;

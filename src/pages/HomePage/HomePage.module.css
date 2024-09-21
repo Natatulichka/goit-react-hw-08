@@ -1,6 +1,7 @@
 .icon {
   height: 100px;
   width: 100px;
+  color: #646cff;
 }
 
 .homepage {
@@ -11,7 +12,7 @@
 
 .homepage h1 {
   font-size: 36px;
-  color: #ff4500;
+  color: #646cff;
   margin-bottom: 20px;
 }
 

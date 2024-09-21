@@ -1,7 +1,10 @@
 .header {
   display: flex;
+  color: white;
+  padding: 20px;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
-  /* background-color: #1976d2; */
+  border-bottom: solid 2px #b4b4c6;
+  background-color: #646cff;
 }

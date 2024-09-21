@@ -11,9 +11,10 @@
   font-weight: 700;
 }
 .button {
-  padding: 6px 14px;
-  color: #1976d2;
+  /* padding: 6px 14px; */
   font-weight: 500;
-  border-radius: 6px;
+  background-color: transparent;
+  /* border-radius: 6px; */
   cursor: pointer;
+  color: red;
 }

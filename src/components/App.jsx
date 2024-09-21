@@ -11,7 +11,7 @@
 import { lazy, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 // import Loader from "./Loader/Loader";
-import { Layout } from "./Layout";
+import { Layout } from "./Layout/Layout";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAuthIsRefreshing } from "../redux/auth/selectors";
 import { refreshUser } from "../redux/auth/operations";

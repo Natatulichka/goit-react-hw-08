@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import css from "./AuthNav.module.css";
+import css from "../Navigation/Navigation.module.css";
 import clsx from "clsx";
 
 export const AuthNav = () => {
@@ -8,7 +8,7 @@ export const AuthNav = () => {
   };
 
   return (
-    <div>
+    <div className={css.nav}>
       <NavLink className={buildLinkClass} to="/register">
         REGISTER
       </NavLink>

@@ -1,4 +1,3 @@
-import { FcContacts } from "react-icons/fc";
 import css from "./HomePage.module.css";
 import {
   selectAuthIsLoggedIn,
@@ -10,11 +9,11 @@ import { FaAddressBook } from "react-icons/fa";
 
 function HomePage() {
   const isLoggedIn = useSelector(selectAuthIsLoggedIn);
-  const user = useSelector(selectAuthUser);
+
   const contacts = useSelector(selectContacts);
   return isLoggedIn ? (
-    <div className={css.homepage}>
-      <h1>Welcome back, {user.name}!</h1>
+    <div className={css.container}>
+      <h1>Contacts book</h1>
       <p>
         You have <b>{contacts.length}</b> contacts in your address book.
       </p>

@@ -39,34 +39,49 @@ function RegistrationForm() {
     >
       {({ errors }) => (
         <Form className={css.form}>
-          <label className={css.label}>
-            <span>Username:</span>
-            <Field type="text" name="name" placeholder="Enter username" />
+          <div className={css.fieldContainer}>
+            <label className={css.label}>
+              <span>Username:</span>
+            </label>
+            <Field
+              type="text"
+              name="name"
+              placeholder="Enter username"
+              className={css.field}
+            />
             <ErrorMessage className={css.error} name="name" component="span" />
-          </label>
-          <label className={css.label}>
-            <span>Email:</span>
-            <Field type="text" name="email" placeholder="example@gmail.com" />
-            <ErrorMessage className={css.error} name="email" component="span" />
-          </label>
 
-          <label className={css.label}>
-            <span>Password:</span>
+            <label className={css.label}>
+              <span>Email:</span>
+            </label>
+            <Field
+              type="text"
+              name="email"
+              placeholder="example@gmail.com"
+              className={css.field}
+            />
+            <ErrorMessage className={css.error} name="email" component="span" />
+
+            <label className={css.label}>
+              <span>Password:</span>
+            </label>
             <Field
               type="password"
               name="password"
               placeholder="Enter your password"
+              className={css.field}
             />
             <ErrorMessage
               className={css.error}
               name="password"
               component="span"
             />
-          </label>
-
-          <button disabled={Object.keys(errors).length > 0} type="submit">
-            Sign up
-          </button>
+          </div>
+          <div className={css.buttonContainer}>
+            <button disabled={Object.keys(errors).length > 0} type="submit">
+              Sign up
+            </button>
+          </div>
           <a href="/login">Already have an account? Login</a>
           {error && (
             <p className={css.error}>Oops, some error occured... {error}</p>

@@ -36,29 +36,38 @@ function LoginForm() {
     >
       {({ errors }) => (
         <Form className={css.form}>
-          <label className={css.label}>
-            <span>Email:</span>
-            <Field type="text" name="email" placeholder="example@gmail.com" />
+          <div className={css.fieldContainer}>
+            <label className={css.label}>
+              <span>Email:</span>
+            </label>
+            <Field
+              type="text"
+              name="email"
+              placeholder="example@gmail.com"
+              className={css.field}
+            />
             <ErrorMessage className={css.error} name="email" component="span" />
-          </label>
 
-          <label className={css.label}>
-            <span>Password:</span>
+            <label className={css.label}>
+              <span>Password:</span>
+            </label>
             <Field
               type="password"
               name="password"
               placeholder="Enter your password"
+              className={css.field}
             />
             <ErrorMessage
               className={css.error}
               name="password"
               component="span"
             />
-          </label>
-
-          <button disabled={Object.keys(errors).length > 0} type="submit">
-            Sign in
-          </button>
+          </div>
+          <div className={css.buttonContainer}>
+            <button disabled={Object.keys(errors).length > 0} type="submit">
+              Sign in
+            </button>
+          </div>
           <a href="/register">Don&apos;t have an account? Register</a>
           {error && (
             <p className={css.error}>Oops, some error occured... {error}</p>

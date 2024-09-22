@@ -2,9 +2,13 @@
   height: 100px;
   width: 100px;
   color: #646cff;
+  margin: 0 auto;
 }
 
-.homepage {
+.container {
+  min-height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
   color: #333;
   padding: 40px 20px;
   text-align: center;

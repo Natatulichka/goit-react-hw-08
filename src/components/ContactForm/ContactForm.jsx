@@ -51,20 +51,35 @@ function ContactForm() {
     >
       {({ isSubmitting }) => (
         <Form className={css.form}>
-          <label className={css.label}>
-            <span>Name:</span>
-            <Field type="text" name="name" />
+          <h2>Add contact</h2>
+          <div className={css.fieldContainer}>
+            <label className={css.label}>
+              <span>Name:</span>
+            </label>
+            <Field
+              type="text"
+              name="name"
+              placeholder="Enter username"
+              className={css.field}
+            />
             <ErrorMessage name="name" component="div" className={css.error} />
-          </label>
 
-          <label className={css.label}>
-            <span>Number:</span>
-            <Field type="text" name="number" />
+            <label className={css.label}>
+              <span>Number:</span>
+            </label>
+            <Field
+              type="text"
+              name="number"
+              placeholder="Enter your number"
+              className={css.field}
+            />
             <ErrorMessage name="number" component="div" className={css.error} />
-          </label>
-          <button type="submit" disabled={isSubmitting}>
-            Add Contact <FaUserPlus />
-          </button>
+          </div>
+          <div className={css.buttonContainer}>
+            <button type="submit" disabled={isSubmitting}>
+              Add Contact <FaUserPlus />
+            </button>
+          </div>
         </Form>
       )}
     </Formik>

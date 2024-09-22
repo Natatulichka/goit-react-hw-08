@@ -15,11 +15,11 @@ function Contact({ id, name, number }) {
   return (
     <li className={css.contactItem}>
       <div className={css.contactDetails}>
-        <div>
+        <div className={css.fieldContainer}>
           <FaUser size="16px" />
           <span className={css.contactName}>{name}</span>
         </div>
-        <div>
+        <div className={css.fieldContainer}>
           <FaPhone size="16px" />
           <span className={css.contactNumber}>{number}</span>
         </div>

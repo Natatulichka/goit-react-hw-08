@@ -1,8 +1,5 @@
 import css from "./HomePage.module.css";
-import {
-  selectAuthIsLoggedIn,
-  selectAuthUser,
-} from "../../redux/auth/selectors";
+import { selectAuthIsLoggedIn } from "../../redux/auth/selectors";
 import { useSelector } from "react-redux";
 import { selectContacts } from "../../redux/contacts/selectors";
 import { FaAddressBook } from "react-icons/fa";
@@ -20,7 +17,7 @@ function HomePage() {
       <FaAddressBook className={css.icon} />
     </div>
   ) : (
-    <div className={css.homepage}>
+    <div className={css.container}>
       <h1>Welcome to Your Contacts App!</h1>
       <FaAddressBook className={css.icon} />
       <p>Manage all your contacts in one place. Easy and secure.</p>

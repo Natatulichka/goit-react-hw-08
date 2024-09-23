@@ -5,10 +5,13 @@ import { AppBar } from "../AppBar/AppBar";
 
 export const Layout = ({ children }) => {
   return (
-    <div className={css.section}>
+    <>
       <AppBar />
-
-      <Suspense fallback={<Loader />}>{children}</Suspense>
-    </div>
+      <div className={css.section}>
+        <div className={css.container}>
+          <Suspense fallback={<Loader />}>{children}</Suspense>
+        </div>
+      </div>
+    </>
   );
 };

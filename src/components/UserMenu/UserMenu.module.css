@@ -1,9 +1,6 @@
 .wrapper {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px;
-  color: white;
+  flex-wrap: wrap;
   font-weight: 500;
 }
 
@@ -11,10 +8,16 @@
   font-weight: 700;
 }
 .button {
-  /* padding: 6px 14px; */
   font-weight: 500;
-  background-color: transparent;
-  /* border-radius: 6px; */
   cursor: pointer;
   color: red;
+  background-color: transparent;
+}
+@media screen and (min-width: 768px) {
+  .wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 12px;
+  }
 }

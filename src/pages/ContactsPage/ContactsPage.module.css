@@ -1,9 +1,18 @@
-.container {
+.contact {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: #333;
   gap: 20px;
-  padding: 20px;
 }
 .list {
   height: 756px;
   overflow-y: scroll;
+}
+@media screen and (min-width: 780px) {
+  .contact {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
 }

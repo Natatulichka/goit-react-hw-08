@@ -1,0 +1,31 @@
+.section {
+  padding: 0;
+}
+.container {
+  min-width: 288px;
+  padding: 16px;
+  margin: 0 auto;
+  background-color: #cbfade;
+  min-height: calc(100vh - 50px);
+}
+html {
+  scroll-behavior: smooth;
+}
+@media screen and (min-width: 375px) {
+  .container {
+    max-width: 375px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    padding: 32px;
+  }
+}

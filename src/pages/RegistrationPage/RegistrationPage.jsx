@@ -1,8 +1,8 @@
-import RegistrationForm from "../../components/RegistrationForm/registrationForm";
-import css from "../HomePage/HomePage.module.css";
+import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
+
 function RegistrationPage() {
   return (
-    <div className={css.container}>
+    <div>
       <RegistrationForm />
     </div>
   );

@@ -13,10 +13,11 @@ export const UserMenu = () => {
   return (
     <div className={css.wrapper}>
       <p className={css.username}>Welcome, {user.name}</p>
-
-      <button type="button" className={css.button} onClick={onLogout}>
-        LOG OUT
-      </button>
+      <div>
+        <button type="button" className={css.button} onClick={onLogout}>
+          LOG OUT
+        </button>
+      </div>
     </div>
   );
 };

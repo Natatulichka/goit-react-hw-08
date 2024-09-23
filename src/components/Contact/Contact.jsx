@@ -25,7 +25,7 @@ function Contact({ id, name, number }) {
         </div>
       </div>
       <button className={css.deleteButton} onClick={handleDelete}>
-        Delete <FaUserMinus size="16px" />
+        Delete <FaUserMinus />
       </button>
     </li>
   );
